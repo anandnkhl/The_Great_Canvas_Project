@@ -4,6 +4,7 @@ var app = express();
 var opn = require('opn');
 
 app.get('/', (req, res) => res.sendFile( __dirname + '/index.html'));
+app.get('/fractalTree.js', (req, res) => res.sendFile( __dirname + '/FractalTree/fractalTree.js'));
 app.get('/Fractal-Tree', (req, res) => res.sendFile( __dirname + '/FractalTree/fractalTree.html'));
 
 app.listen(8080, function(req, res) {
