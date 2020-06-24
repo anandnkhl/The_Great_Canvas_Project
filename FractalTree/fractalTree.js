@@ -20,8 +20,9 @@ function drawTree(startX, startY, len, thickness, angle) {
     return;
   }
   
-  drawTree(0, -len, len*0.8, thickness*0.7, -25); //Left Branches
-  drawTree(0, -len, len*0.8, thickness*0.7, 20);  //Right Branches
+  drawTree(0, -len, len*0.8, thickness*0.7, -30); //Left Branches
+  drawTree(0, -len, len*0.8, thickness*0.7, 25);  //Right Branches
+  drawTree(0, -len, len*0.5, thickness*0.5, -5);  //Right Branches
   ctx.restore();
 }
 
