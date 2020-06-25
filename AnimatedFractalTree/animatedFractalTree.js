@@ -27,7 +27,15 @@ function drawAnimatedTree(startX, startY, len, thickness, angle) {
 
 drawAnimatedTree(initialX, initialY, (20*unitHeight), 15, 0); 
 
-setInterval( () => {
-    limit = limit/2;
-    drawAnimatedTree(initialX, initialY, (20*unitHeight), 15, 0); 
-} , 1000)
+const repeatAnimation = setInterval( growAnimation , 1000)
+
+function growAnimation(){
+    console.log("running");
+    if (limit < 2*unitHeight){
+        clearInterval(repeatAnimation); //stops repeat
+    }
+    else{
+        limit /= 2;
+        drawAnimatedTree(initialX, initialY, (20*unitHeight), 15, 0);
+    }
+}
