@@ -4,7 +4,7 @@ canvas.height = window.innerHeight - 4;
 
 const initialX = innerWidth/2, initialY = innerHeight - 4;
 const unitHeight = innerHeight/100, unitWidth = innerWidth/100;
-let limit = 2*unitHeight;
+let limit = 20*unitHeight;
 
 const ctx = canvas.getContext("2d");
 function drawAnimatedTree(startX, startY, len, thickness, angle) {
@@ -27,3 +27,7 @@ function drawAnimatedTree(startX, startY, len, thickness, angle) {
 
 drawAnimatedTree(initialX, initialY, (20*unitHeight), 15, 0); 
 
+setInterval( () => {
+    limit = limit/2;
+    drawAnimatedTree(initialX, initialY, (20*unitHeight), 15, 0); 
+} , 1000)
