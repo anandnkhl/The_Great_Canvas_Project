@@ -10,6 +10,9 @@ app.get('/Fractal-Tree', (req, res) => res.sendFile( __dirname + '/FractalTree/f
 //*****Animated Fractal Tree***** 
 app.get('/animatedFractalTree.js', (req, res) => res.sendFile( __dirname + '/AnimatedFractalTree/animatedFractalTree.js'));
 app.get('/Animated-Fractal-Tree', (req, res) => res.sendFile( __dirname + '/AnimatedFractalTree/animatedFractalTree.html'));
+//*****Bounce***** 
+app.get('/bounce.js', (req, res) => res.sendFile( __dirname + '/Bounce/bounce.js'));
+app.get('/Bounce', (req, res) => res.sendFile( __dirname + '/Bounce/bounce.html'));
 
 app.listen(8080, function(req, res) {
     console.log('Server running at http://127.0.0.1:8080/');
