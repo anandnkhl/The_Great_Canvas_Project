@@ -32,8 +32,7 @@ function Circle (x, y, color, speedX, speedY){
 for(let i = 0; i < noOfCircles; i++){
     let centerX = radius + Math.random()*(innerWidth - 2*radius);
     let centerY = radius + Math.random()*(innerHeight - 2*radius);
-    let randomColor = '#'+ Math.floor(Math.random()*10) + Math.floor(Math.random()*10) + Math.floor(Math.random()*10)
-        + Math.floor(Math.random()*10) + Math.floor(Math.random()*10) + Math.floor(Math.random()*10);
+    let randomColor = 'hsl('+ (Math.random()*360) + ', 100%, 50%)';
     let dx = (Math.random() - 0.5)* 20, dy = (Math.random() - 0.5) * 20;
     
     circles.push( new Circle( centerX, centerY, randomColor, dx, dy))
