@@ -3,36 +3,47 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const ctx = canvas.getContext("2d");
 
-const noOfCircles = 30;
+const noOfCircles = 2;
 const radius = innerWidth/30;
 const circles = [];
 
 function Circle (x, y, color){
     let maxHeight = y;
+    let currentHeight = 0;
+    let gravity = 0.5;
     let time = 0;
-    this.drawCircle = () => {
+    this.drawCircle = (centerY) => {
         ctx.beginPath();
-        ctx.arc(x, y, radius, 0, 2*Math.PI);
+        ctx.arc(x, centerY, radius, 0, 2*Math.PI);
         ctx.strokeStyle = color;
         ctx.lineWidth = 3;
         ctx.stroke();
     }
     this.moveCircle = () => {
-        if (y + radius >= innerHeight || y - radius <= 0){
-            
+        if (currentHeight <= innerHeight - radius ){
+            let speedY = 0.5*(gravity)*(time)*(time);
+            currentHeight =  maxHeight + speedY;
+            this.drawCircle(currentHeight);
         }else{
-            let speedY = maxHeight + 0.05*time*time;
-            y = speedY;
+            let speedY = 0.5*(gravity)*(time)*(time);
+            currentHeight =  maxHeight - speedY;
+            this.drawCircle(currentHeight);
         }
-        
-        time++;
-        this.drawCircle();
+        if(currentHeight >= innerHeight - radius || currentHeight <= maxHeight){
+            time = 0;
+            if(maxHeight < innerHeight - radius - 2){
+                maxHeight += 10;
+            }else{
+                maxHeight = innerHeight - radius;
+            }
+        }
+        time++; 
     }
 }
 
 for(let i = 0; i < noOfCircles; i++){
     let centerX = radius + Math.random()*(innerWidth - 2*radius);
-    let centerY = radius + Math.random()*(innerHeight - 100 - 2*radius);
+    let centerY = Math.random()*(innerHeight/2);
     let randomColor = 'hsl('+ (Math.random()*360) + ', 100%, 50%)';
     
     circles.push( new Circle( centerX, centerY, randomColor))
