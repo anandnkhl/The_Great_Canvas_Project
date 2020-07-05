@@ -7,25 +7,27 @@ const noOfCircles = 30;
 const radius = innerWidth/30;
 const circles = [];
 
-function Circle (x, y, color, speedX, speedY){
-    this.drawCircle = () => {
-        ctx.beginPath();
-        ctx.arc(x, y, radius, 0, 2*Math.PI);
-        ctx.strokeStyle = color;
-        ctx.lineWidth = 3;
-        ctx.stroke();
-    }
-    this.moveCircle = () => {
-        if (x + radius >= innerWidth || x - radius <= 0){
-            speedX = -speedX
-        }
-        if (y + radius >= innerHeight || y - radius <= 0){
-            speedY= -speedY
-        }
-        x += speedX;
-        y += speedY;
+class Circle {
+    constructor(x, y, color, speedX, speedY) {
+        this.drawCircle = () => {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, 2 * Math.PI);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 3;
+            ctx.stroke();
+        };
+        this.moveCircle = () => {
+            if (x + radius >= innerWidth || x - radius <= 0) {
+                speedX = -speedX;
+            }
+            if (y + radius >= innerHeight || y - radius <= 0) {
+                speedY = -speedY;
+            }
+            x += speedX;
+            y += speedY;
 
-        this.drawCircle();
+            this.drawCircle();
+        };
     }
 }
 

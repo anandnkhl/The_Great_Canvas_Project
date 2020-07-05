@@ -16,6 +16,9 @@ app.get('/Bounce', (req, res) => res.sendFile( __dirname + '/Bounce/bounce.html'
 //*****Bounce Gravity***** 
 app.get('/bounceGravity.js', (req, res) => res.sendFile( __dirname + '/BounceGravity/bounceGravity.js'));
 app.get('/Bounce-Gravity', (req, res) => res.sendFile( __dirname + '/BounceGravity/bounceGravity.html'));
+//*****Digital Rain***** 
+app.get('/digitalRain.js', (req, res) => res.sendFile( __dirname + '/DigitalRain/digitalRain.js'));
+app.get('/Digital-Rain', (req, res) => res.sendFile( __dirname + '/DigitalRain/digitalRain.html'));
 
 app.listen(8080, function(req, res) {
     console.log('Server running at http://127.0.0.1:8080/');
