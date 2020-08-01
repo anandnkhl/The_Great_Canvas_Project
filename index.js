@@ -1,7 +1,8 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-var opn = require('opn');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const opn = require('opn');
+const PORT = process.env.PORT || 8080;
 
 app.get('/', (req, res) => res.sendFile( __dirname + '/index.html'));
 //*****Fractal Tree*****
@@ -20,6 +21,6 @@ app.get('/Bounce-Gravity', (req, res) => res.sendFile( __dirname + '/BounceGravi
 app.get('/digitalRain.js', (req, res) => res.sendFile( __dirname + '/DigitalRain/digitalRain.js'));
 app.get('/Digital-Rain', (req, res) => res.sendFile( __dirname + '/DigitalRain/digitalRain.html'));
 
-app.listen(process.env.PORT || 8080, function(req, res) {
+app.listen(PORT, function(req, res) {
     console.log('Server running');
 });
