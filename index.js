@@ -20,7 +20,6 @@ app.get('/Bounce-Gravity', (req, res) => res.sendFile( __dirname + '/BounceGravi
 app.get('/digitalRain.js', (req, res) => res.sendFile( __dirname + '/DigitalRain/digitalRain.js'));
 app.get('/Digital-Rain', (req, res) => res.sendFile( __dirname + '/DigitalRain/digitalRain.html'));
 
-app.listen(8080, function(req, res) {
-    console.log('Server running at http://127.0.0.1:8080/');
-    opn('http://127.0.0.1:8080/'); //Auto launch default browser with our home page
+app.listen(process.env.PORT || 8080, function(req, res) {
+    console.log('Server running');
 });
