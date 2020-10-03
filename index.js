@@ -4,23 +4,25 @@ const app = express();
 const opn = require('opn');
 const PORT = process.env.PORT || 8080;
 
-app.get('/', (req, res) => res.sendFile( __dirname + '/index.html'));
+app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'));
 //*****Fractal Tree*****
-app.get('/fractalTree.js', (req, res) => res.sendFile( __dirname + '/FractalTree/fractalTree.js'));
-app.get('/Fractal-Tree', (req, res) => res.sendFile( __dirname + '/FractalTree/fractalTree.html'));
+app.get('/fractalTree.js', (req, res) => res.sendFile(__dirname + '/canvas/FractalTree/fractalTree.js'));
+app.get('/canvas/Fractal-Tree', (req, res) => res.sendFile(__dirname + '/canvas/FractalTree/fractalTree.html'));
 //*****Animated Fractal Tree***** 
-app.get('/animatedFractalTree.js', (req, res) => res.sendFile( __dirname + '/AnimatedFractalTree/animatedFractalTree.js'));
-app.get('/Animated-Fractal-Tree', (req, res) => res.sendFile( __dirname + '/AnimatedFractalTree/animatedFractalTree.html'));
+app.get('/animatedFractalTree.js', (req, res) => res.sendFile(__dirname + '/canvas/AnimatedFractalTree/animatedFractalTree.js'));
+app.get('/canvas/Animated-Fractal-Tree', (req, res) => res.sendFile(__dirname + '/canvas/AnimatedFractalTree/animatedFractalTree.html'));
 //*****Bounce***** 
-app.get('/bounce.js', (req, res) => res.sendFile( __dirname + '/Bounce/bounce.js'));
-app.get('/Bounce', (req, res) => res.sendFile( __dirname + '/Bounce/bounce.html'));
+app.get('/bounce.js', (req, res) => res.sendFile(__dirname + '/canvas/Bounce/bounce.js'));
+app.get('/canvas/Bounce', (req, res) => res.sendFile(__dirname + '/canvas/Bounce/bounce.html'));
 //*****Bounce Gravity***** 
-app.get('/bounceGravity.js', (req, res) => res.sendFile( __dirname + '/BounceGravity/bounceGravity.js'));
-app.get('/Bounce-Gravity', (req, res) => res.sendFile( __dirname + '/BounceGravity/bounceGravity.html'));
+app.get('/bounceGravity.js', (req, res) => res.sendFile(__dirname + '/canvas/BounceGravity/bounceGravity.js'));
+app.get('/canvas/Bounce-Gravity', (req, res) => res.sendFile(__dirname + '/canvas/BounceGravity/bounceGravity.html'));
 //*****Digital Rain***** 
-app.get('/digitalRain.js', (req, res) => res.sendFile( __dirname + '/DigitalRain/digitalRain.js'));
-app.get('/Digital-Rain', (req, res) => res.sendFile( __dirname + '/DigitalRain/digitalRain.html'));
+app.get('/digitalRain.js', (req, res) => res.sendFile(__dirname + '/canvas/DigitalRain/digitalRain.js'));
+app.get('/canvas/Digital-Rain', (req, res) => res.sendFile(__dirname + '/canvas/DigitalRain/digitalRain.html'));
 
-app.listen(PORT, function(req, res) {
+app.use(express.static(__dirname + '/assets'));
+
+app.listen(PORT, function (req, res) {
     console.log('Server running');
 });
