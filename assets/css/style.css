@@ -1,3 +1,99 @@
+:root {
+    --kombu-green: #36453bff;
+    --cadet: #596869ff;
+    --ebony: #515751ff;
+    --ivory: #f5f9e9ff;
+    --sage: #c2c1a5ff;  
+}
+@font-face {
+    font-family: roguedash;
+    src: url(/fonts/Roguedash-Solid.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: roguedash;
+}
 main {
-    background-color: blue;
+    background-color: var(--ebony);
+    padding: 50px;
+}
+main > h1 {
+    text-align: center;
+    margin: 20px;
+    font-size: 100px;
+    color: var(--ivory);
+}
+.canvas-triangle {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.canvas-triangle > .first {
+    position: absolute;
+    z-index: 1;
+    top:-10px;
+    height: 50px;
+    width: 50px;
+    background-color: var(--ivory);
+    border-radius: 50%;
+}
+.canvas-triangle > .second {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 75px solid var(--kombu-green);
+}
+.canvas-triangle > .last { 
+    position: absolute;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-bottom: 55px solid var(--ebony);
+}
+.canvas-frame {
+    margin-top: 75px;
+    border: 10px solid var(--sage);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.canvas-frame > a {
+    text-decoration: none;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border: 2px solid white;
+    margin: 20px;
+    padding: 20px;
+}
+.card:hover {
+    background-color: var(--kombu-green);
+}
+.card > p {
+    font-size: 40px;
+    color: var(--ivory);
+    margin: 20px;
+}
+.card > img {
+    height: 300px;
+    margin: 20px;
+}
+footer {
+    background-color: var(--kombu-green);
+    color: var(--sage);
+    font-size: 25px;
+    padding: 40px 20px;
+}
+footer a {
+    text-decoration: none;
+    color: var(--cadet);
 }
