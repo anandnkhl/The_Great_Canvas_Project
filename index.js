@@ -22,5 +22,5 @@ app.get('/digitalRain.js', (req, res) => res.sendFile( __dirname + '/DigitalRain
 app.get('/Digital-Rain', (req, res) => res.sendFile( __dirname + '/DigitalRain/digitalRain.html'));
 
 app.listen(PORT, function(req, res) {
-    console.log('Server running');
+    console.log(`Server running on port ${PORT}`);
 });
